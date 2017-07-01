@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'activerecord', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'thin'
+gem 'bcrypt'
+gem 'pry'
+gem 'rake'
+gem 'capybara'
+gem 'sqlite3'
+gem 'require_all'
+gem 'shotgun'
+gem 'rack-flash3'
+gemspec

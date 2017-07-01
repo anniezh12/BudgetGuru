@@ -1,0 +1,45 @@
+<div class="container">
+
+  <div class="col-lg-4"></div>
+   <div class="col-lg-4">
+    <div class="jumbotron" style="margin-top:100px">
+      <p class="text-danger">
+          <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+          <% end %>
+      </p>
+    <form method=post action='/accounts' >
+
+         <table class="table">
+              <tr>
+                  <td><label for="cardtype">Type:</label></td>
+                  <td><input type=text name=cardtype id=cardtype></td>
+              </tr>
+                  <br>
+              <tr>
+                <td><label for="currentbalance">Current Balance:</label></td>
+                <td><input type=text name=currentbalance id=currentbalance></td>
+              </tr>
+                  <br>
+              <tr>
+                <td><label for="statementbalance">Statement Balance:</td>
+                <td><input type=text name=statementbalance ></td>
+              </tr>
+                  <br>
+              <tr>
+                <td><label for="creditlimit">Credit Limit:</label></td>
+                <td><input type=text name=creditlimit ></td>
+              </tr>
+                  <br>
+              <tr>
+                <td><label for="duedate">Due Date:</label></td>
+                <td><input type=text  name=duedate ></td>
+              </tr>
+          </table>
+
+          <input type=submit value="Add Account" class="btn btn-success form-control">
+          <a href="/accounts" class="btn btn-danger form-control">Cancel</a>
+      </form>
+    </div>
+  </div>
+

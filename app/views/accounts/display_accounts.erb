@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron">
+    Welcome, <b><%= @user.username.upcase %></b><br>
+    <br><p class="text-danger"><% if flash.has?(:message) %>
+     <%= flash[:message] %>
+     <% end %></p>
+      <form method=post action='/accounts/edit'>
+        <!-- <input type="hidden" name="_method" value="patch"> -->
+          <table class="table">
+              <tr>
+                    <th>ID</th>
+                    <th>Card Type</th>
+                    <th >Current Balance</th>
+                    <th>Statement Balance</th>
+                    <th>Credit Limit</th>
+                    <th>Due Date</th>
+                    <th>Remaining Balance</th>
+              </tr>
+                     <%@user.accounts.each do |a|%>
+              <tr>
+                    <td><input type=radio  name=user[account_ids][] id=<%=a.id%> value=<%=a.id%>></td>
+                    <td><%=a.card_type %></td>
+                    <td><%=a.current_balance%></td>
+                    <td><%=a.statement_balance%></td>
+                    <td><%=a.credit_limit%></td>
+                    <td><%=a.due_date %></td>
+                    <td><%=a.credit_limit.to_i-a.current_balance.to_i%></td>
+                    </input>
+              </tr>
+                     <% end %>
+
+          </table>
+        </div>
+
+             <input type="submit" value="Edit Card" class="btn btn-primary form-control"  >
+
+    </form>
+
+        <a href="accounts/new" class="btn btn-primary form-control">Add Account </a>
+        <a href="/logout" class="btn btn-primary form-control">Log Out </a>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+
+<div class="container">
+
+  <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+    <div class="jumbotron" style="margin-top:100px">
+      <p class="text-danger">
+      <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+        <% end %>
+      </p>
+      <form method=post action="/login">
+        <div class="form-group">
+User Name:<input type=text name=username id=username class="form-control" placeholder="Enter Username"><br>
+Password:<input type=password name=password id=password class="form-control" placeholder="Enter Password"><br>
+<br><br>
+  <button type=submit  class="btn btn-primary form-control"> Log In</div>
+</div>
+</form>
+</div>
+</div>
+  <div class="col-lg-4">
+</div>

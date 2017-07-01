@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+  <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+     <div class="jumbotron">
+      <p class="text-danger">
+        <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+        <% end %>
+     </p>
+            <form method=post action="/accounts/edit" >
+              <table class="table">
+                  <p class="info">  Please provid ID number of the account to be Edited/Deleted</p>
+                        <tr><td>ID</td><td><input type=text name=accountid id=accountid>
+                        <tr><td>
+                        <tr></td>
+             </table>
+                <input type=submit value="Edit Account" class="btn btn-primary form-control">
+            </form>
+
+    </div>
+   </div>
+         <div class="col-lg-4"></div>
+</div>

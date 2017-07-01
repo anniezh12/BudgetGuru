@@ -1,0 +1,48 @@
+
+<div class="container-fluid">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+   <div class="jumbotron">
+        <p class="text-danger">
+          <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+          <% end %>
+        </p>
+
+      <form method="post" action="/accounts/<%=@account.id%>/edit" >
+       <!-- <input type="hidden" name="_method" value="patch"> -->
+        <table class="table">
+           <tr>
+               <td><label for="cardtype">Type:</label></td>
+               <td><input type=text name=cardtype id=cardtype value="<%= @account.card_type %>" placeholder="Card Type">
+               </td>
+           </tr>
+                 <br>
+           <tr>
+              <td><label for="currentbalance">Current Balance:</label></td>
+              <td><input type=text name=currentbalance  value="<%= @account.current_balance%>" placeholder="Current Balance"></td>
+           </tr>
+                 <br>
+          <tr>
+              <td><label for="statementbalance">Statement Balance:</label></td>
+              <td><input type=text name="statementbalance" value="<%= @account.statement_balance %>" placeholder="Statement Balance"></td>
+          </tr>
+                 <br>
+          <tr>
+              <td><label for="creditlimit">Credit Limit:</label></td>
+              <td><input type=text name=creditlimit placeholder="Creit Limit" value="<%= @account.credit_limit %>"> </td>
+          </tr>
+                 <br>
+          <tr>
+              <td><label for="duedate">Due Date:</label></td>
+              <td><input type=text  name=duedate id= placeholder="Due Date" value="<%= @account.due_date %>"></td>
+          </tr>
+        </table>
+          <input type=submit value="Edit Account" class="btn btn-primary form-control">
+              <a href="/accounts/<%=@account.id%>/delete" class="btn btn-danger form-control">Delete Card</a>
+              <a href="/accounts" class="btn btn-success form-control">Go Back</a>
+          </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+</div>
