@@ -4,8 +4,8 @@ Welcome to BudgetGuru. A gem that help users to add their credit/debit cards inf
 
 Add this line to your application's Gemfile:
 
-```ruby gem 'BudgetGuru'
-```
+ruby gem 'BudgetGuru'
+
 
 And then execute:
 
